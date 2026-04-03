@@ -20,7 +20,9 @@ class LoginRequest(BaseModel):
 def signup(body: SignUpRequest):
     try:
         res = supabase.auth.sign_up({"email": body.email, "password": body.password})
-        return {"user": res.user}
+        if res.session is None:
+            raise HTTPException(status_code=400, detail="Email confirmation required — disable it in Supabase Auth settings")
+        return {"access_token": res.session.access_token, "token_type": "bearer"}
     except AuthApiError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
