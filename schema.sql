@@ -20,3 +20,7 @@ create table orders (
   shipping_address text    not null,
   status           text    not null default 'pending'
 );
+
+
+
+-- test
