@@ -3,3 +3,8 @@ __pycache__/
 .venv/
 venv/
 .env
+
+# Playwright
+node_modules/
+playwright-report/
+test-results/
