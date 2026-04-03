@@ -21,7 +21,7 @@ create table orders (
   status           text    not null default 'pending'
 );
 
--- test 2
+
 
 
 
