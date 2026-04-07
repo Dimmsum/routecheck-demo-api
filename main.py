@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from postgrest.exceptions import APIError
-from routers import items, users, orders, auth
+from routers import items, orders, auth
 
 app = FastAPI(title="RouteCheck Demo API", version="1.0.0")
 
@@ -25,7 +25,6 @@ async def generic_error_handler(request: Request, exc: Exception):
 
 
 app.include_router(auth.router)
-app.include_router(users.router)
 app.include_router(items.router)
 app.include_router(orders.router)
 

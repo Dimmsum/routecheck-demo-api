@@ -1,17 +1,5 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel
 from typing import Optional
-
-
-class UserCreate(BaseModel):
-    name: str
-    email: str
-    age: int
-
-
-class UserUpdate(BaseModel):
-    name: Optional[str] = None
-    email: Optional[str] = None
-    age: Optional[int] = None
 
 
 class ItemCreate(BaseModel):
@@ -19,13 +7,6 @@ class ItemCreate(BaseModel):
     description: str
     price: float
     in_stock: bool
-
-
-class ItemUpdate(BaseModel):
-    title: Optional[str] = None
-    description: Optional[str] = None
-    price: Optional[float] = None
-    in_stock: Optional[bool] = None
 
 
 class OrderCreate(BaseModel):
